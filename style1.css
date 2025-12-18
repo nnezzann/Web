@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nabla&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Wet+Paint&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Geom:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: lightblue;
+    background: linear-gradient(to right, darkblue, #1E293B);
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 100px;
+}
+
+p {
+    font-size: 30px;
+    font-family: "Geom", sans-serif;
+    color: white;
+
+}
+
+.title {
+    font-family: "Geom", sans-serif;
+    font-size: 50px;
+    background: linear-gradient(rgb(8, 90, 156), rgb(55, 131, 245));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 1200px;
+    animation: spin 800m linear infinite;
+    font-weight: 1000;
+}
+
+.mern {
+    width: 800px;
+    height: 500px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.sign {
+    display: flex;
+    width: 1000px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.images {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.background {
+    width: 800px;
+    height: 500px;
+    position: relative;
+    background-position: center;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+
+}
+
+.background::after,
+.background::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: conic-gradient(from var(--angle), darkblue, white, blue);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 5px;
+    animation: round 1s linear infinite;
+}
+
+@keyframes round {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
+
+.background::before {
+    filter: blur(1.5rem);
+    opacity: 0.7;
+
+}
+
+
+
+img {
+    width: 800px;
+    height: 500px;
+}
+
+.button {
+    background: linear-gradient(-45deg, darkblue, rgb(112, 112, 197));
+    width: 200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-family: "DM Sans", sans-serif;
+}
+
+@keyframes spin {
+    0% {
+        background: linear-gradient(to right, white, rgb(185, 185, 223));
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    50% {
+        background: linear-gradient(to right, rgb(157, 187, 243), rgb(121, 121, 240));
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    100% {
+        background: linear-gradient(to right, white, rgb(185, 185, 223));
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 10vh;
+    background: linear-gradient(#1E293B, blue);
+    position: sticky;
+    top: 0;
+    font-family: "DM Sans", sans-serif;
+    margin-bottom: 0;
+
+}
+
+nav a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(rgb(8, 90, 156), rgb(55, 131, 245));
+    color: darkblue;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+nav a:hover {
+    background: linear-gradient(gold, orange);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
